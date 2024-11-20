@@ -1,0 +1,463 @@
+*{
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --primary-color: #f6f8fd;
+    --secondary-color: #ffffff;
+    --color-text: #0c0c0c;
+    --navbar-color: #ffffff;
+    --navbar-color-text: #ffffff;
+  }
+/*STYLE NAVBAR*/
+.navbar {
+    position: fixed;
+    padding: 15px 0 15px 0;
+    width: 100%;
+    transition: all .2s ease;
+    z-index: 9999;
+  }
+
+.navbar.color-active {
+    background-color: var(--navbar-color);
+    padding: 20px 0 20px 0;
+    border-bottom: 2px solid #3a6cd751;
+}
+
+.navbar .nav-link a {
+    padding: 5px 10px 5px 10px;
+    font-weight: 500;
+    text-decoration: none;
+    color:#000000; /*text navbar*/
+  }
+
+.navbar .nav-link a:hover {
+    color: var(--secondary-color);
+  }
+
+.navbar.nav-link.active{
+    background-color:#ffffff;
+    color: #86c2fb;
+}
+
+/*STYLE HOMEPAGE HEADER*/
+.header {
+    background: #c6ffdd; /* fallback for old browsers */
+    background: -webkit-linear-gradient(30deg, #2d336e, #6b6bc2, #5b82d6); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(30deg, #2d336e, #6b6bc2, #5b82d6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ 
+  }
+  
+
+  /* Animasi */
+
+
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+
+.ragnarok {
+    animation: fadeIn 0.9s ease-in-out; 
+}
+.ragnarok2 {
+    animation: slideIn 0.9s ease-in-out; 
+}
+
+
+
+  /* CSS untuk judul */
+  .homepage .header-box h1 {
+    font-size: 3.2rem;
+    font-weight: 300;
+    color: var(--color-text);
+    animation: slideIn 0.7s ease-in forwards; /* Menggunakan animasi slideIn dengan durasi 0.5 detik */
+  } 
+  
+.homepage .header-box h1 span {
+    font-weight: 700;
+    font-style: bold;
+
+}
+
+.homepage.header-box p {
+    line-height: 2;
+  color: var(--color-text);
+  font-weight: 500;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.homepage.header-box img {
+    width: 100px;
+}
+
+@media screen and (max-width: 992px) {
+    .homepage.header-box{
+        padding-top: 8rem;
+    }
+    .homepage.header-box img{
+        width: 400px;
+        display: block;
+        margin-inline: auto;
+    }
+}
+
+@media screen and (max-width: 775px) {
+    .homepage .header-box{
+        padding-top: 8rem;
+    }
+    
+}
+
+@media screen and (max-width: 575px) {
+    .homepage .header-box h1 {
+        font-size: 3rem;
+    }
+    
+}
+
+@media screen and (max-width: 475px) {
+    .homepage .header-box h1 {
+        font-size: 2.4rem;
+    }
+    .homepage .header-box p {
+        font-size: 10px;
+    }
+    .homepage .header-box  img {
+        display: none; /* Menghilangkan gambar pada layar ponsel */
+    }
+    .homepage .kelas .row.row:nth-child(2) {
+        flex-wrap: wrap; /* Mengatur agar konten bisa memanfaatkan ruang sesuai kebutuhan */
+        justify-content: space-between; /* Menyusun item agar rata dan berjarak */
+    }
+    .homepage .kelas .row.row:nth-child(2) img {
+        width: 100%; /* Lebar gambar menjadi 100% agar fleksibel */
+        height: auto;
+        object-fit: cover;
+    }
+    .footer .payment-methods img {
+        margin-top: 20px;
+        width: 15px; /* Ukuran gambar lebih kecil untuk perangkat seluler */
+      }
+}
+
+@media screen and (max-width: 375px) {
+    .homepage .header-box h1{
+        font-size: 2rem;
+    }
+
+    .homepage .header-box p {
+        font-size: 9px;
+    }
+    .homepage .kelas .row.row:nth-child(2) {
+        grid-template-columns: repeat(3, 1fr); /* Menjadi 3 kolom pada layar ponsel */
+        gap: 20px; /* Jarak antar kolom */
+    }
+
+    .homepage .kelas .row.row:nth-child(2) img {
+        width: 100%; /* Lebar gambar menjadi 100% agar fleksibel */
+        height: auto;
+        object-fit: cover;
+    }
+    
+}
+
+/*STYLE HOMEPAGE LIST*/
+.homepage .kelas {
+    background-color: var(--primary-color);
+    padding-bottom: 100px;
+}
+
+.homepage .kelas .row:nth-child(1){
+    padding-top: 150px;
+    padding-bottom: 100px;
+}
+
+.homepage .kelas .row:nth-child(1) h1 ,
+.homepage .kelas .row:nth-child(1) p {
+    color: var(--color-text);
+}
+
+.homepage .kelas .row.row:nth-child(2) .col{
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    padding: 0;
+}
+
+.homepage .kelas .row.row:nth-child(2){
+    display:grid;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    padding-inline: 10px;
+}
+
+.homepage .kelas .row.row:nth-child(2) img{
+    width: 50vw;
+    height: auto;
+    object-fit: cover;
+}
+
+.homepage .kelas .row.row:nth-child(2) h5{
+    color: var(--color-text);
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.homepage .kelas ,.row.row:nth-child(3) {
+    padding-top: 100px;
+}
+
+
+
+
+/* FAQ */
+
+.faq{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: var(--primary-color);
+}
+
+.faq h2 {
+    color: var(--color-text);
+}
+
+.faq .accordion .accordion-button {
+    color: var(--color-text);
+    font-weight: bold;
+    background-color: #ffffff;
+    line-height: 1.3;
+}
+
+.faq .accordion .accordion-button:focus {
+    border: none;
+    box-shadow: none;
+}
+
+.faq .accordion .accordion-body {
+    background-color: #ffffff;
+}
+
+/* STYLE LIST HARGA */
+
+.kelas .reksa {
+}
+
+.kelas .image-button {
+    
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    /* Atur properti lain sesuai kebutuhan */
+  }
+  
+.kelas  .image-button:hover {
+    /* Tambahkan efek hover di sini */
+    opacity: 0.8;
+  }
+
+/* STYLE FOOTEr */
+.footer{
+    width: 100%;
+    min-height: 10vh;
+}
+
+.footer .row:nth-child(1) .col:nth-child(1) h3{
+    color: var(--color-text);
+}
+
+.footer  .row:nth-child(1) .col:nth-child(1) desc{
+    color: var(--color-text);
+    font-size: 14px;
+    line-height: 2;
+
+}
+
+.footer .no a,
+.footer .mail a {
+    display: flex;
+    align-items: center;
+    color: #000000;
+    column-gap: 5px;
+}
+
+.footer .no a :hover,
+.footer .mail a :hover {
+   color: #ffffff;
+}
+
+.footer {background: #c6ffdd; /* fallback for old browsers */
+    background: -webkit-linear-gradient(30deg, #2d336e, #6b6bc2, #5b82d6); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(30deg, #2d336e, #6b6bc2, #5b82d6);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+.footer .row.row:nth-child(1) .col:nth-child(2){
+    gap: 10px;
+}
+
+.footer .row.row:nth-child(1) .col:nth-child(2) a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer .row.row:nth-child(1) .col:nth-child(2) a:hover {
+    color: #f6f8fd;
+}
+   
+.footer .row.row:nth-child(2) {
+    margin-top: 100px;
+}
+.footer .payment-methods {
+    display: grid; /* Menggunakan grid layout */
+    grid-template-columns: repeat(4, 1fr); /* Membagi ruang menjadi lima kolom dengan lebar yang sama */
+    justify-items: center; /* Pusatkan item di setiap kolom */
+    gap: 20px; /* Jarak antara setiap item */
+  }
+  
+  .footer .payment-methods img {
+    width: 100%; /* Gambar mengisi lebar kolom */
+    height: auto; /* Biarkan tinggi otomatis agar proporsi gambar tetap terjaga */
+    transition: transform 0.3s ease; /* Animasi transisi */
+  }
+  
+  .footer .payment-methods img:hover {
+    transform: scale(1.1); /* Memperbesar gambar saat dihover */
+  }
+
+
+/* KelasDetail.css */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Secara default, 1 kolom dengan lebar minimum 250px */
+    gap: 20px;
+}
+
+@media (min-width: 768px) { /* Saat mode desktop */
+    .card-container {
+        grid-template-columns: repeat(5, 1fr); /* Menyusun card menjadi 5 kolom */
+    }
+}
+
+@media (max-width: 767px) { /* Saat mode hp */
+    .card-container {
+        grid-template-columns: repeat(3, 1fr); /* Menyusun card menjadi 3 kolom */
+    }
+}
+
+@media (max-width: 575px) { /* Saat mode hp dengan lebar layar yang lebih kecil */
+    .card-container {
+        grid-template-columns: repeat(2, 1fr); /* Menyusun card menjadi 2 kolom */
+    }
+}
+
+/* CSS untuk card */
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Efek bayangan untuk menambah dimensi */
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efek naik saat hover */
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #333333;
+}
+
+.title-padding {
+    padding-top: 80px;
+    text-align: center;
+}
+
+.logo-k {
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px; /* Melengkungkan ujung gambar */
+    overflow: hidden; /* Mengatur overflow agar gambar terpotong jika lebih besar dari area kontainer */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); Menambahkan bayangan untuk efek stylish */
+}
+
+.logo-l {
+    max-width: 100%;
+    height: auto; /* Menjaga gambar proporsional */
+    transition: transform 0.3s ease; /* Animasi sedikit saat hover */
+}
+
+.logo-l:hover {
+    transform: scale(1.05); /* Membuat gambar membesar sedikit saat dihover */
+
+}
+
+.box-kl {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.button-containers {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px; /* Jarak antara tombol */
+  }
+  
+  .btn1 {
+    /* Gaya dasar tombol */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff; /* Warna latar belakang */
+    color: #fff; /* Warna teks */
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s; /* Animasi ketika tombol ditekan */
+  }
+  
+  .btn1:hover {
+    transform: translateY(-3px); /* Menggeser tombol sedikit ke atas saat digulir */
+  }
+  
+  .btn1:active {
+    transform: translateY(1px); /* Menggeser tombol sedikit ke bawah saat ditekan */
+  }
+
+  @media screen and (max-width: 768px) {
+    .btn1 {
+      padding: 8px 12px; /* Mengurangi padding pada tombol saat layar ponsel */
+      font-size: 12px; /* Mengurangi ukuran font pada tombol saat layar ponsel */
+    }
+  }
